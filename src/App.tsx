@@ -1,25 +1,25 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 
-function App() {
+import { useQuery } from "react-query";
+
+import { getData } from "./api/get-data";
+
+import { Slide } from "./components/Slide/Slide";
+
+import { IData } from "./types";
+
+export const App: React.FC = () => {
+  const [data, setData] = useState<IData[]>([]);
+
+  const { isLoading } = useQuery<IData[]>("data", getData, {
+    onSuccess(data) {
+      setData(data);
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isLoading && <div>Loading...</div>}
+      {!isLoading && <Slide content={data} />}
+    </>
   );
-}
-
-export default App;
+};

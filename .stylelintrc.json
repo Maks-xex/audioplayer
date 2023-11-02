@@ -1,6 +1,7 @@
 {
   "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
   "rules": {
-    "selector-class-pattern": "^([a-z][a-zA-Z0-9]*)(__[a-zA-Z0-9]+)*$"
+    "selector-class-pattern": "^[a-z][_a-z0-9-]*$",
+    "scss/dollar-variable-pattern": null
   }
 }

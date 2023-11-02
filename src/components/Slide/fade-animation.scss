@@ -1,0 +1,46 @@
+.fade_enter_left img {
+  opacity: 0;
+  transform: translateX(0%);
+}
+
+.fade_enter_right img {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(100%);
+}
+
+.fade_enter_active_right img,
+.fade_enter_active_left img {
+  opacity: 0;
+  filter: blur(0);
+  transform: translateX(0%);
+}
+
+.fade_exit_left img {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(-100%);
+}
+
+.fade_exit_right img {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade_exit_active_right img {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade_exit_active_left img {
+  opacity: 1;
+  filter: blur(10px);
+  transform: translateX(0%);
+}
+
+.fade_enter_active_right img,
+.fade_exit_active_right img,
+.fade_enter_active_left img,
+.fade_exit_active_left img {
+  transition: opacity 300ms linear, transform 300ms ease, filter 300ms linear;
+}
