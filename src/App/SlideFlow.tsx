@@ -2,16 +2,18 @@ import React, { useState } from "react";
 
 import { useQuery } from "react-query";
 
+import { useTransitionControl } from "../hooks/useTransitionControl";
+
 import { getSlides } from "../api/get-slides";
 
 import { Slide } from "../components/Slide/Slide";
+import { SlideItem } from "../components/Slide/SlideItem/SlideItem";
+import { Loader } from "../components/Loader/Loader";
+import { Error } from "../components/Error/Error";
 
 import { IData } from "../types";
-import { SlideItem } from "../components/Slide/SlideItem/SlideItem";
 
-import { useTransitionControl } from "../hooks/useTransitionControl";
 import styles from "./slide-animation.module.scss";
-import { Loader } from "../components/Loader/Loader";
 
 export const SlideFlow: React.FC = () => {
   const { isTransitioning, startTransition } = useTransitionControl(500);
@@ -19,11 +21,16 @@ export const SlideFlow: React.FC = () => {
   const [direction, setDirection] = useState<"prev" | "next">("next");
   const [data, setData] = useState<IData[]>([]);
 
-  const { isLoading } = useQuery<IData[]>("slides", getSlides, {
-    onSuccess(data) {
-      setData(data);
-    },
-  });
+  const { isLoading, isError, error } = useQuery<IData[], Error>(
+    "slides",
+    getSlides,
+    {
+      onSuccess(data) {
+        setData(data);
+      },
+    }
+  );
+
   const clickPreviousHandler = (index: number): void => {
     if (isTransitioning) {
       return;
@@ -70,6 +77,7 @@ export const SlideFlow: React.FC = () => {
   );
   return (
     <>
+      {isError && <Error error={error} />}
       {isLoading && <Loader />}
       {!isLoading && <Slide>{renderSlides()}</Slide>}
     </>
