@@ -11,12 +11,12 @@ interface IPlayer {
   src: string;
   clickNextHandler: () => void;
   clickPreviousHandler: () => void;
-  onEnded: () => void;
+  onEnded?: (() => void) | undefined;
   canClickNext: boolean;
   canClickPrevious: boolean;
   className?: string;
 }
-const disabledColor = "#00305722"; // faded
+const disabledColor = "#00305722";
 
 export const Player: React.FC<IPlayer> = ({
   src,
