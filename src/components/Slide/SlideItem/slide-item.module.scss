@@ -1,0 +1,28 @@
+.is-visible {
+  background: #0033;
+  box-shadow: 0 0 8px 1px black;
+  color: white;
+  display: block;
+  transform: translateX(0);
+}
+
+.cover {
+  object-fit: cover;
+  width: 800px;
+  height: 800px;
+}
+
+h3 {
+  margin: 0;
+  padding: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.v-hidden {
+  visibility: hidden;
+  position: absolute;
+
+  & img {
+    visibility: visible;
+  }
+}
