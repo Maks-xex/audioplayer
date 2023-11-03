@@ -11,6 +11,7 @@ import { SlideItem } from "../components/Slide/SlideItem/SlideItem";
 
 import { useTransitionControl } from "../hooks/useTransitionControl";
 import styles from "./slide-animation.module.scss";
+import { Loader } from "../components/Loader/Loader";
 
 export const SlideFlow: React.FC = () => {
   const { isTransitioning, startTransition } = useTransitionControl(500);
@@ -69,7 +70,7 @@ export const SlideFlow: React.FC = () => {
   );
   return (
     <>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Loader />}
       {!isLoading && <Slide>{renderSlides()}</Slide>}
     </>
   );
