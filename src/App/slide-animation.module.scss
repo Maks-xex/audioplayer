@@ -1,0 +1,45 @@
+/* Animation for the 'next' direction */
+.next-enter img {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.next-enter-active img {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.next-exit img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.next-exit-active img {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Animation for the 'prev' direction */
+.prev-enter img {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.prev-enter-active img {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.prev-exit img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.prev-exit-active img {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
