@@ -2,7 +2,7 @@ import { IData } from "../types";
 import { HOST } from "./constans";
 
 export const getSlides = async (): Promise<IData[]> => {
-  if (!HOST) throw Error("server don`t found");
+  if (!HOST) throw Error("server not found");
   try {
     const response = await fetch(`${HOST}/api/slides`);
     if (!response.ok) {
