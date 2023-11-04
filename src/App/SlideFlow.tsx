@@ -79,7 +79,7 @@ export const SlideFlow: React.FC = () => {
     <>
       {isError && <Error error={error} />}
       {isLoading && <Loader />}
-      {!isLoading && <Slide>{renderSlides()}</Slide>}
+      {!isLoading && !isError && <Slide>{renderSlides()}</Slide>}
     </>
   );
 };
