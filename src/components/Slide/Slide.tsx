@@ -7,7 +7,7 @@ interface ISlide {
 }
 export const Slide: React.FC<ISlide> = ({ children }) => {
   return (
-    <section className={styles.slider}>
+    <section className={styles.slider} data-testid="slide">
       <div className={styles.slider_wrapper}>{children}</div>
     </section>
   );
