@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import { CSSTransition } from "react-transition-group";
 
-import { Player } from "../../audioPlayer/AudioPlayer";
+import { Player } from "../../Player/Player";
 
 import { IData } from "../../../types";
 
@@ -45,6 +45,7 @@ export const SlideItem: React.FC<ISlideItem> = ({
       timeout={timeout}
       unmountOnExit
       classNames={animation}
+      data-testid="slide-item"
     >
       <div
         className={
