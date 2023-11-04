@@ -29,12 +29,17 @@ export const Player: React.FC<IPlayer> = ({
   const customIcons = {
     previous: (
       <Icon
+        data-testid="previous-icon"
         icon="mdi:skip-previous"
         color={canClickPrevious ? "" : disabledColor}
       />
     ),
     next: (
-      <Icon icon="mdi:skip-next" color={canClickNext ? "" : disabledColor} />
+      <Icon
+        data-testid="next-icon"
+        icon="mdi:skip-next"
+        color={canClickNext ? "" : disabledColor}
+      />
     ),
   };
 
