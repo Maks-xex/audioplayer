@@ -2,25 +2,25 @@
   {
     "id": 1,
     "text": "Lupus Nocte - Hadouken",
-    "imageURL": "http://localhost:5000/music/image/Hadouken.jpg",
-    "audioURL": "http://localhost:5000/music/audio/Lupus Nocte - Hadouken.mp3"
+    "imageURL": "http://localhost:5000/assets/image/Hadouken.jpg",
+    "audioURL": "http://localhost:5000/assets/audio/Lupus Nocte - Hadouken.mp3"
   },
   {
     "id": 2,
     "text": "Spero",
-    "imageURL": "http://localhost:5000/music/image/Spero.png",
-    "audioURL": "http://localhost:5000/music/audio/Spero.mp3"
+    "imageURL": "http://localhost:5000/assets/image/Spero.png",
+    "audioURL": "http://localhost:5000/assets/audio/Spero.mp3"
   },
   {
     "id": 3,
     "text": "Memory_Reboot",
-    "imageURL": "http://localhost:5000/music/image/memory_reboot.jpg",
-    "audioURL": "http://localhost:5000/music/audio/VØJ, Narvent - Memory_Reboot.mp3"
+    "imageURL": "http://localhost:5000/assets/image/memory_reboot.jpg",
+    "audioURL": "http://localhost:5000/assets/audio/VØJ, Narvent - Memory_Reboot.mp3"
   },
   {
     "id": 4,
     "text": "Weight of the World",
-    "imageURL": "http://localhost:5000/music/image/weight_of_the_world.png",
-    "audioURL": "http://localhost:5000/music/audio/Weight of the World.mp3"
+    "imageURL": "http://localhost:5000/assets/image/weight_of_the_world.png",
+    "audioURL": "http://localhost:5000/assets/audio/Weight of the World.mp3"
   }
 ]
