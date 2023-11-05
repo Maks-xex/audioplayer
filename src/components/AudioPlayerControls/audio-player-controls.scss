@@ -1,0 +1,37 @@
+$rhap_theme-color: #ee9b00;
+$rhap_bar-color: #dddddd5e;
+
+.rhap_main-controls-button {
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.rhap_container {
+  display: flex;
+  background-color: transparent;
+
+  & svg {
+    color: $rhap_theme-color;
+  }
+}
+
+.rhap_volume-bar,
+.rhap_progress-bar,
+.rhap_download-progress {
+  background: $rhap_bar-color;
+}
+
+.rhap_progress-indicator,
+.rhap_volume-indicator,
+.rhap_progress-filled {
+  background: $rhap_theme-color;
+}
+
+.rhap_time {
+  color: white;
+}
