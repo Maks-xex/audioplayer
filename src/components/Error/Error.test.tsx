@@ -1,40 +1,42 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Error as ErrorComponent } from "./Error";
 
-describe("Error Component", () => {
-  it("renders an error message when provided with an error object", () => {
-    const errorMessage = "Test error message";
-    const error = new Error(errorMessage);
-
-    render(<ErrorComponent error={error} />);
-
-    const errorElement = screen.getByText(errorMessage);
-    expect(errorElement).toBeInTheDocument();
-  });
-
-  it("renders a special message for HTTP 503 error", () => {
-    const http503Error = new Error("503");
-
-    render(<ErrorComponent error={http503Error} />);
-
-    const specialMessage = screen.getByText(
-      "We apologize for the inconvenience. Our team is actively working to resolve the issue."
+describe("Error", () => {
+  it("displays an error message", () => {
+    const errorMessage = "An error occurred.";
+    const { getByTestId, getByText } = render(
+      <ErrorComponent error={new Error(errorMessage)} />
     );
-    expect(specialMessage).toBeInTheDocument();
+
+    const errorComponent = getByTestId("error");
+    const errorTitle = getByText("Oops! Something went wrong");
+    const errorDescription = getByText(errorMessage);
+
+    expect(errorComponent).toBeInTheDocument();
+    expect(errorTitle).toBeInTheDocument();
+    expect(errorDescription).toBeInTheDocument();
   });
 
-  it("renders individual digits when provided a numeric error message", () => {
-    const numericErrorMessage = "404";
-    const error = new Error(numericErrorMessage);
+  it("handles an undefined error prop", () => {
+    const { queryByTestId } = render(<ErrorComponent error={undefined} />);
 
-    render(<ErrorComponent error={error} />);
+    const errorComponent = queryByTestId("error");
 
-    const digitElements = screen.getAllByTestId("error-digit");
-    expect(digitElements).toHaveLength(numericErrorMessage.length);
+    expect(errorComponent).toBeNull();
+  });
 
-    digitElements.forEach((digitElement, index) => {
-      expect(digitElement).toHaveTextContent(numericErrorMessage[index]);
-    });
+  it("displays an empty error message when error message is empty", () => {
+    const { getByTestId, getByText } = render(
+      <ErrorComponent error={new Error("")} />
+    );
+
+    const errorComponent = getByTestId("error");
+    const errorTitle = getByText("Oops! Something went wrong");
+    const errorDescription = getByTestId("error-message");
+
+    expect(errorComponent).toBeInTheDocument();
+    expect(errorTitle).toBeInTheDocument();
+    expect(errorDescription).toBeInTheDocument();
   });
 });
