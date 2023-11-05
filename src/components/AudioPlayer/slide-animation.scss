@@ -1,0 +1,75 @@
+/* stylelint-disable keyframes-name-pattern */
+.carousel-animation {
+  transition: transform 0.3s ease-out opacity 0.3 ease-out;
+  display: flex;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-out-animation-next {
+  animation: slideOutNext 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-out-animation-previous {
+  animation: slideOutPrevious 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-in-animation-next {
+  animation: slideInNext 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-in-animation-previous {
+  animation: slideInPrevious 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideOutPrevious {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutNext {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInPrevious {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInNext {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
