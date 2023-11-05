@@ -1,14 +1,10 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { AudioPlayer } from "./AudioPlayer";
-// mockAudioPlayer.js
 
-const mockPlay = jest.fn();
-
-const mockHTMLMediaElement = {
-  play: mockPlay,
-};
-jest.spyOn(mockHTMLMediaElement, "play").mockImplementation(mockPlay);
+const mockAudio = jest
+  .spyOn(window.HTMLMediaElement.prototype, "play")
+  .mockImplementation(async (): Promise<void> => await Promise.resolve());
 
 const assets = [
   {
@@ -45,7 +41,7 @@ describe("AudioPlayer Component", () => {
     const previousButton = getByLabelText("Previous");
 
     fireEvent.click(nextButton);
-    jest.spyOn(mockHTMLMediaElement, "play").mockImplementation(mockPlay);
+    expect(mockAudio).toHaveBeenCalled();
     await waitFor(() => {
       const nextStepElement = queryByText(assets[1].text);
       expect(nextStepElement).toBeInTheDocument();
@@ -53,7 +49,7 @@ describe("AudioPlayer Component", () => {
 
     await waitFor(() => {
       fireEvent.click(previousButton);
-      jest.spyOn(mockHTMLMediaElement, "play").mockImplementation(mockPlay);
+      expect(mockAudio).toHaveBeenCalled();
       const prevStepElement = queryByText(assets[0].text);
       expect(prevStepElement).toBeInTheDocument();
     });
