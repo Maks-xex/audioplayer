@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Audioplayer
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project is a web application built with React for the frontend and a Node.js server for the backend. It includes scripts for development, testing, and building the application. This README file provides instructions on how to set up and use the project.
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
+1. Start the development server using the npm `start` command.
+2. Access the application in your web browser at http://localhost:3000.
+3. You can begin developing your project by editing the source files in the src directory.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Scripts
+This project includes several npm scripts defined in the `package.json` file. Here are some of the key scripts you can use:
 
-### `npm test`
+* **Start the Development Server (Frontend and Backend):**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm `start`
 
-### `npm run build`
+This command install project dependencies and starts the frontend and backend development servers concurrently.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Start the Frontend Development Server:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run `start-frontend`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This command starts only the frontend development server.
 
-### `npm run eject`
+* **Start the Backend Development Server:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+npm run `start-backend`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This command starts only the backend development server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Run Tests:**
+  
+npm `test`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This command runs tests for the project. Use npm test:watch to run tests in watch mode.
