@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 interface ITransitionControl {
+  endTransition: () => unknown;
   isTransitioning: boolean;
   startTransition: () => void;
 }
@@ -35,5 +36,6 @@ export const useTransitionControl = (
   return {
     isTransitioning,
     startTransition,
+    endTransition,
   };
 };
