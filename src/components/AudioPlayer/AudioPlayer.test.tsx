@@ -35,6 +35,7 @@ describe("AudioPlayer Component", () => {
   });
 
   it("allows clicking next and previous", async () => {
+    const transitionTime = 600;
     const { getByLabelText, queryByText } = render(
       <AudioPlayer assets={assets} isLoading={false} />
     );
@@ -48,12 +49,15 @@ describe("AudioPlayer Component", () => {
       expect(nextStepElement).toBeInTheDocument();
     });
 
-    await waitFor(() => {
-      fireEvent.click(previousButton);
-      expect(mockAudio).toHaveBeenCalled();
-      const prevStepElement = queryByText(assets[0].text);
-      expect(prevStepElement).toBeInTheDocument();
-    });
+    await waitFor(
+      () => {
+        fireEvent.click(previousButton);
+        expect(mockAudio).toHaveBeenCalled();
+        const prevStepElement = queryByText(assets[0].text);
+        expect(prevStepElement).toBeInTheDocument();
+      },
+      { timeout: transitionTime }
+    );
   });
 
   it("handles loading state correctly", () => {

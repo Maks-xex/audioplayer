@@ -26,6 +26,7 @@ export const AudioPlayer: React.FC<ISliderProps> = ({ assets, isLoading }) => {
   });
 
   const [currentStep, setCurrentStep] = useState<number>(0);
+
   const clickPreviousHandler = (): void => {
     if (assets.length > currentStep && currentStep !== 0) {
       if (isTransitioning) return;
@@ -38,6 +39,7 @@ export const AudioPlayer: React.FC<ISliderProps> = ({ assets, isLoading }) => {
       }, 300);
     }
   };
+
   const clickNextHandler = (): void => {
     if (assets.length - 1 > currentStep) {
       if (isTransitioning) return;
@@ -50,6 +52,7 @@ export const AudioPlayer: React.FC<ISliderProps> = ({ assets, isLoading }) => {
       }, 300);
     }
   };
+
   useEffect(() => {
     if (assets.length > 0) {
       setCurrentAsset(assets[currentStep]);
