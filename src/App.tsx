@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { AudioPlayer } from "./components/AudioPlayer/AudioPlayer";
-import { getSlides } from "./api/get-slides";
 import { useQuery } from "react-query";
-import { IAsset } from "./types";
+
+import { AudioPlayer } from "./components/AudioPlayer/AudioPlayer";
 import { Error } from "./components/Error/Error";
+
+import { getSlides } from "./api/get-slides";
+
+import { IAsset } from "./types";
 
 export const App: React.FC = () => {
   const [assets, setAssets] = useState<IAsset[]>([]);

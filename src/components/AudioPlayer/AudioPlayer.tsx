@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 import { AudioPlayerControls } from "../AudioPlayerControls/AudioPlayerControls";
+import { Loader } from "../Loader/Loader";
+
+import { useTransitionControl } from "../../hooks/useTransitionControl";
 
 import { IAsset } from "../../types";
 
-import styles from "./audio-player.module.scss";
 import "./slide-animation.scss";
-import { Loader } from "../Loader/Loader";
-import { useTransitionControl } from "../../hooks/useTransitionControl";
+import styles from "./audio-player.module.scss";
 
 interface ISliderProps {
   assets: IAsset[];

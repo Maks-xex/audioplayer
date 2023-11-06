@@ -1,7 +1,8 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
-import { App } from "./App";
 import { useQuery } from "react-query";
+import { render, waitFor } from "@testing-library/react";
+
+import { App } from "./App";
 
 jest.mock("react-query", () => ({
   useQuery: jest.fn(),

@@ -1,6 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
-import { AudioPlayerControls } from "./AudioPlayerControls"; // Adjust the import path
+
+import { AudioPlayerControls } from "./AudioPlayerControls";
 
 describe("AudioPlayerControls", () => {
   const src = "audio.mp3";
