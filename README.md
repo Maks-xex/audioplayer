@@ -18,24 +18,24 @@ This project includes several npm scripts defined in the `package.json` file. He
 
 * **Start the Development Server (Frontend and Backend):**
 
-npm `start`
+  npm `start` 
 
-This command install project dependencies and starts the frontend and backend development servers concurrently.
+  This command install project dependencies and starts the frontend and backend development servers concurrently.
 
 * **Start the Frontend Development Server:**
 
-npm run `start-frontend`
+  npm run `start-frontend`
 
-This command starts only the frontend development server.
+  This command starts only the frontend development server.
 
 * **Start the Backend Development Server:**
 
-npm run `start-backend`
+  npm run `start-backend`
 
-This command starts only the backend development server.
+  This command starts only the backend development server.
 
 * **Run Tests:**
   
-npm `test`
+  npm `test`
 
-This command runs tests for the project. Use npm test:watch to run tests in watch mode.
+  This command runs tests for the project. Use npm test:watch to run tests in watch mode.
